@@ -17,7 +17,7 @@ class Header extends HTMLElement {
     <header id="mainHeader" class="basic-padding flex-center-center ${headerClass}">
         <nav>
             <div id="navWrapper" class="flex-center-spacebetween">
-                <a href="/" class="flex-center-start">
+                <a href="/DNKCreative/" class="flex-center-start">
                     <img src="${logoSrc}" class="logo">
                 </a>
                 <button id="menuButton">
@@ -25,11 +25,11 @@ class Header extends HTMLElement {
                 </button>
             </div>
             <div id="fullMenu" class="flex-center-center flex-column">
-                <a id="Home" class="nav-link" href="/">Home</a>
-                <a id="About" class="nav-link" href="/about">About</a>
-                <a id="Services" class="nav-link" href="/services">Services</a>
-                <a id="Clients" class="nav-link" href="/clients">Clients</a>
-                <a id="Contact" class="nav-link" href="/contact">Contact</a>
+                <a id="Home" class="nav-link" href="/DNKCreative/">Home</a>
+                <a id="About" class="nav-link" href="/DNKCreative/about">About</a>
+                <a id="Services" class="nav-link" href="/DNKCreative/services">Services</a>
+                <a id="Clients" class="nav-link" href="/DNKCreative/clients">Clients</a>
+                <a id="Contact" class="nav-link" href="/DNKCreative/contact">Contact</a>
             </div>
         </nav>
     </header>
