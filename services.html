@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Description of the page">
+    <meta name="keywords" content="comma separated">
+    <meta name="author" content="Design Elixir Studio | Megan Byers">
+    <title>DNK Creative | Services</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="fonts.css">
+    <link rel="preload" href="assets/fonts/SFProDisplay-BlackItalic.woff2" as="font" type="font/woff2" crossorigin>
+    <script src="scripts/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/player.style/sutro/+esm"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+
+    
+    
+</head>
+
+<body>
+    
+
+    <main class="black-bg">
+        <header-component data-nav="Services" data-style="white" id="navigation"></navigation-header>
+
+        <section>
+            
+            <div class="white-bg" style="padding: 100px 50px">
+                <h1>From any industry to every screen, we craft social-first solutions that <strong><i>stand out</i></strong></h1>
+            </div>
+
+            <div class="all-services">
+                <div class="service-section">
+                    <div class="basic-padding flex-start-start">
+                        <div class="half-div">
+                            <h2 class="no-text-spacing">Social Media</h2>
+                        </div>
+                        <div class="half-div">
+                            <div class="service-subsection" id="Service1">
+                                <div class="service flex-center-spacebetween" onclick="expandDescription('Service1')">
+                                    <h4>Social Media Strategy</h4>
+                                    <button class="hover">+</button>
+                                </div>
+                                <div class="service-details" id="Service1-Description">
+                                    <p>We develop a customized plan to achieve your business goals through social media. This includes identifying target audiences, setting objectives, choosing platforms, and creating a content calendar, all while defining key performance indicators (KPIs) to measure success.</p>
+                                </div>
+                            </div>
+                            <div class="service-subsection" id="Service2">
+                                <div class="service flex-center-spacebetween" onclick="expandDescription('Service2')">
+                                    <h4>Content Planning</h4>
+                                    <button class="hover">+</button>
+                                </div>
+                                <div class="service-details" id="Service2-Description">
+                                    <p>We organize and strategize your social media content in a detailed content calendar, determining what to post, when to post it, and aligning it with your marketing goals.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-section">
+                    <div class="basic-padding flex-start-start">
+                        <div class="half-div">
+                            <h2 class="no-text-spacing">Content</h2>
+                        </div>
+                        <div class="half-div">
+                            <div class="service-subsection" id="Service3">
+                                <div class="service flex-center-spacebetween" onclick="expandDescription('Service3')">
+                                    <h4>Content Creation</h4>
+                                    <button class="hover">+</button>
+                                </div>
+                                <div class="service-details" id="Service3-Description">
+                                    <p>We produce UGC-style visual and written content for your social channels, including graphics, videos, photos, and text, designed to engage your audience and reflect your brand&apos;s voice.                                    </p>
+                                </div>
+                            </div>
+                            <div class="service-subsection" id="Service4">
+                                <div class="service flex-center-spacebetween" onclick="expandDescription('Service4')">
+                                    <h4>Copywriting</h4>
+                                    <button class="hover">+</button>
+                                </div>
+                                <div class="service-details" id="Service4-Description">
+                                    <p>We guide the visual and conceptual aspects of your social content, setting the tone, style, and aesthetic to ensure consistency and alignment with your brand&apos;s identity.</p>
+                                </div>
+                            </div>
+                            <div class="service-subsection" id="Service5">
+                                <div class="service flex-center-spacebetween" onclick="expandDescription('Service5')">
+                                    <h4>User Generated Content</h4>
+                                    <button class="hover">+</button>
+                                </div>
+                                <div class="service-details" id="Service5-Description">
+                                    <p>Need a face for your brand or someone to create monthly batch videos? Our internal team brings trends to life with engaging and effective content.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-section">
+                    <div class="basic-padding flex-start-start">
+                        <div class="half-div">
+                            <h2 class="no-text-spacing">Marketing</h2>
+                        </div>
+                        <div class="half-div">
+                            <div class="service-subsection" id="Service6">
+                                <div class="service flex-center-spacebetween" onclick="expandDescription('Service6')">
+                                    <h4>Trend Forecasting</h4>
+                                    <button class="hover">+</button>
+                                </div>
+                                <div class="service-details" id="Service6-Description">
+                                    <p>We analyze emerging trends in social media and technology to predict future developments, helping your brand stay ahead of the curve and adapt strategies proactively.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-subsection" id="Service7">
+                                <div class="service flex-center-spacebetween" onclick="expandDescription('Service7')">
+                                    <h4>Influencer Relations</h4>
+                                    <button class="hover">+</button>
+                                </div>
+                                <div class="service-details" id="Service7-Description">
+                                    <p>We establish and nurture impactful relationships with influencers, managing negotiations, creative content briefs, and impact monitoring to expand your brand’s reach and enhance its visibility and credibility.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+            
+            <!-- Add your main content here -->
+        </section>
+        <footer-component></footer-component>
+    </main>
+    <script>
+        function expandDescription(serviceId) {
+            const details = document.getElementById(`${serviceId}-Description`); // Get the service details div
+            const button = document.querySelector(`#${serviceId} button`); // Get the button inside the service div
+            
+            if (details.style.display === "none" || details.style.display === "") {
+                // Get the full height of the content to animate to
+                details.style.display = "block";
+                const fullHeight = details.scrollHeight + "px"; // Get the scrollHeight (full height)
+    
+                // Expand smoothly from height 0 to full height
+                gsap.fromTo(details, 
+                    { 
+                        height: 0, 
+                        opacity: 0 
+                    }, 
+                    { 
+                        height: fullHeight, 
+                        opacity: 1, 
+                        duration: 0.5, 
+                        ease: "power2.out", 
+                        onComplete: () => {
+                            details.style.height = "auto"; // Ensure height is auto after expansion
+                        }
+                    }
+                );
+                gsap.to(button, {
+                    duration: 0.3, // Quick animation for button text
+                    textContent: "-", // Change button text to "-"
+                });
+            } else {
+                // Collapse smoothly to height 0
+                gsap.to(details, {
+                    height: 0, // Collapse to zero height
+                    opacity: 0, // Fade out
+                    duration: 0.5, // Animation duration
+                    ease: "power2.inOut", // Easing for smooth collapse
+                    onComplete: () => {
+                        details.style.display = "none"; // Hide the content after collapsing
+                        details.style.height = ""; // Reset the height style
+                    }
+                });
+                gsap.to(button, {
+                    duration: 0.3, // Quick animation for button text
+                    textContent: "+", // Change button text to "+"
+                });
+            }
+        }
+    
+        // Initialize all details sections as hidden with display: none;
+        document.addEventListener('DOMContentLoaded', function() {
+            const detailsSections = document.querySelectorAll('.service-details');
+            detailsSections.forEach((section) => {
+                section.style.display = 'none';
+            });
+        });
+    </script>
+    
+    
+    
+</body>
+
+</html>
