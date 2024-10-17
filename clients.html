@@ -22,16 +22,13 @@
     
 </head>
 
-<body>
+<body class="flex-center-center flex-column" style="background: var(--gray)">
     
-
-    <main class="black-bg">
-        <header-component data-nav="About" data-style="black" id="navigation"></navigation-header>
-
+    <header-component data-nav="Clients" data-style="black" id="navigation"></navigation-header>
+    <main>
         <section style="background: var(--gray)">
-            
             <div class="basic-padding">
-                <h1>Clients</h1>
+                <h1 class="white-text">Clients</h1>
             </div>
             <div class="clients-container basic-padding">
                 <div class="clients-list flex-center-start flex-wrap">
@@ -253,13 +250,11 @@
                 </div>
                 
             </div>
-
-            
-            
-            <!-- Add your main content here -->
         </section>
-        <footer-component></footer-component>
+        
     </main>
+    <footer-component></footer-component>
+
     <script>
         let expandedCard = null; // Keep track of the currently expanded card
     
@@ -368,12 +363,6 @@
             });
         });
     </script>
-    
-    
-    
-    
-    
-    
 </body>
 
 </html>

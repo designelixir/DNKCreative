@@ -14,7 +14,7 @@ class Header extends HTMLElement {
     const logoSrc = navType === 'white' ? 'assets/dnk-creative-logo-black.svg' : 'assets/dnk-creative-logo-white.svg';
 
     this.innerHTML = `
-    <header id="mainHeader" class="basic-padding ${headerClass}">
+    <header id="mainHeader" class="basic-padding flex-center-center ${headerClass}">
         <nav>
             <div id="navWrapper" class="flex-center-spacebetween">
                 <a href="/" class="flex-center-start">

@@ -102,13 +102,15 @@ p {
 .black-bg {background: black; color: white;}
 .white-bg {background: white; color: black;}
 .active-link {text-decoration: underline!important; opacity: 1!important}
-
+nav {width: 100%;}
 #navWrapper {z-index: 2; position: relative; width: 100%;}
 #menuButton {background: unset; border: unset; height: 35px; width: 35px; background-size: contain; background-repeat: no-repeat; background-position: center;}
 #menuButton:hover {cursor: pointer; transform: scale(1.1);}
 .black-bg #menuButton {background-image: url('assets/menu-white.svg')}
 .white-bg #menuButton {background-image: url('assets/menu-black.svg')}
 
+
+.white-bg #fullMenu {background: white;}
 #fullMenu {background: black; height: calc(100vh - 100px); width: 100%;}
 .nav-link {font-size: 24px; margin: 20px 0; opacity: 0.6; color: inherit!important; text-decoration: unset;}
 .nav-link:hover {cursor: pointer; transform: scale(1.01); opacity: 1!important;}
@@ -116,7 +118,7 @@ p {
 
 
 /* Hero */
-.homepage-hero {height: 60vh; width: 100%; overflow: clip}
+.homepage-hero {height: 40vh; width: 100%; background-image: url('assets/Untitled.gif'); background-size: cover; background-repeat: no-repeat;}
 .homepage-hero video { min-height: 50vh;}
 
 /* About */
@@ -170,6 +172,7 @@ input {font-size: 18px; padding: 20px; margin: 10px 0; min-width: 300px; width: 
 textarea {font-size: 18px; padding: 20px; margin: 10px 0; min-width: 300px; width: 50vw; border-radius: 0; border: 1px solid white; background: black; color: white;}
 .submit-button {background: white; margin-top: 20px; color: black; font-weight: 700; border: unset; padding: 10px 35px; font-size: 18px; }
 /* Footer */
+
 #designElixirCredits {text-decoration: none; font-size: 10px; color: white; opacity: 0.25}
 @media screen and (max-width: 480px) {
   body {
