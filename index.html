@@ -23,22 +23,85 @@
     
 
     <main class="black-bg">
-        
-            <header-component data-nav="Home" data-style="black" id="navigation"></navigation-header>
-        
-        <section>
-            <div class="homepage-hero flex-center-center">
-            
+        <div style="border: 1px solid red; height: 100vh;">
+            <hamburger-component data-nav="Home" data-style="black" id="navigation"></hamburger-component>
+            <div class="big-logo flex-start-center flex-column basic-padding" style="height: calc(100% - 225px); border: 1px solid lime">
+                <div class="flex-center-start no-flex-grow">
+                    <img class="logo-letter" src="assets/letters/white/D.svg" alt="logo letter D"/>
+                    <img class="logo-letter" src="assets/letters/white/N.svg" alt="logo letter N"/>
+                    <img class="logo-letter" src="assets/letters/white/K.svg" alt="logo letter K"/>
+                    <img class="logo-letter" src="assets/letters/white/C.svg" alt="logo letter C"/>
+                    <img class="logo-letter" src="assets/letters/white/R.svg" alt="logo letter R"/>
+                    <img class="logo-letter" src="assets/letters/white/E.svg" alt="logo letter E"/>
+                    <img class="logo-letter" src="assets/letters/white/A.svg" alt="logo letter A"/>
+                    <img class="logo-letter" src="assets/letters/white/T.svg" style="margin-left: -10px" alt="logo letter T"/>
+                    <img class="logo-letter" src="assets/letters/white/I.svg" alt="logo letter I"/>
+                    <img class="logo-letter" src="assets/letters/white/V.svg" alt="logo letter V"/>
+                    <img class="logo-letter" src="assets/letters/white/E.svg" alt="logo letter E"/>
+                </div>
+                <div style="border: 1px solid lime;" class="flex-start-start no-flex-grow full-width">
+                    <h3 class="logo-letter" >curating...</h3>
+                </div>
                 
             </div>
-            <div class="basic-padding">
-                <h1><strong>Curating compelling content that speaks your brand's language</strong></h1>
+            
+            <div class="marquee flex-center-start">
+                <div class="marquee-content flex-center-start">
+                    <ul class="flex-center-start">
+                        <li>Social Media Strategy</li>
+                        <li>Content Planning</li>
+                        <li>Content Creation</li>
+                        <li>Copywriting</li>
+                        <li>User Generated Content</li>
+                        <li>Trend Forecasting</li>
+                        <li>Influencer Relations</li>
+                    </ul>
+                    <ul class="flex-center-start">
+                        <li>Social Media Strategy</li>
+                        <li>Content Planning</li>
+                        <li>Content Creation</li>
+                        <li>Copywriting</li>
+                        <li>User Generated Content</li>
+                        <li>Trend Forecasting</li>
+                        <li>Influencer Relations</li>
+                    </ul>
+                </div>
             </div>
+        </div>
+        
+            
+        
+        <section>
+            
             
             
             <!-- Add your main content here -->
         </section>
     </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    // Select all elements with the class 'logo-letter'
+    gsap.from(".logo-letter", {
+        opacity: 0,               // Start with zero opacity for a fade-in effect
+                           // Slide each letter down from -50px for a smooth appearance
+        stagger: 0.1,             // Stagger the appearance with a 0.1 second delay between each letter
+        duration: 0.5,            // Animation duration for each letter
+        ease: "power2.out"        // Easing for a smooth transition
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const marqueeContent = document.querySelector('.marquee-content');
+    const speed = 20; // Adjust this value for faster or slower scrolling
+
+    gsap.to(marqueeContent, {
+        xPercent: -50, // Move the content left by 50% of its width
+        ease: "linear",
+        repeat: -1, // Infinite loop
+        duration: speed, // Adjust duration for speed
+    });
+});
+    </script>
 </body>
 
 </html>

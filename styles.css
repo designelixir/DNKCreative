@@ -108,6 +108,7 @@ nav {width: 100%;}
 #menuButton:hover {cursor: pointer; transform: scale(1.1);}
 .black-bg #menuButton {background-image: url('assets/menu-white.svg')}
 .white-bg #menuButton {background-image: url('assets/menu-black.svg')}
+#menuButtonBlack {background: unset; border: unset; height: 35px; width: 35px; background-size: contain; background-repeat: no-repeat; background-position: center; background-image: url('assets/menu-black.svg')}
 
 
 .white-bg #fullMenu {background: white;}
@@ -117,9 +118,22 @@ nav {width: 100%;}
 
 
 
-/* Hero */
+/* Hero / Homepage */
 .homepage-hero {height: 40vh; width: 100%; background-image: url('assets/Untitled.gif'); background-size: cover; background-repeat: no-repeat;}
-.homepage-hero video { min-height: 50vh;}
+.marquee {
+    overflow: hidden; /* Hide content that overflows the container */
+    width: 100%; /* Full width */
+    background-color: white; /* Adjust as needed */
+    padding: 25px 0; /* Adjust padding for spacing */
+    border-top: 20px solid black;
+
+}
+
+.marquee-content {width: 200%;}
+.marquee-content ul {white-space: nowrap; margin: 0; padding: 0;}
+.marquee-content li {font-size: 18px; color: black; margin: 0 25px; list-style-type: none;}
+
+.logo-letter {height: 100px; margin: 2.5px;}
 
 /* About */
 .half-div {width: 50%;}
