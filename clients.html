@@ -13,353 +13,135 @@
     <link rel="stylesheet" href="fonts.css">
     <link rel="preload" href="assets/fonts/SFProDisplay-BlackItalic.woff2" as="font" type="font/woff2" crossorigin>
     <script src="scripts/index.js"></script>
+    <script src="scripts/clientList.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/player.style/sutro/+esm"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-
-
-    
-    
 </head>
 
-<body class="flex-center-center flex-column" style="background: var(--gray)">
-    
-    <header-component data-nav="Clients" data-style="black" id="navigation"></navigation-header>
+<body class="flex-center-center flex-column white-bg">
+    <header-component data-nav="Clients" data-style="black" id="navigation"></header-component>
     <main>
-        <section style="background: var(--gray)">
+        <section>
             <div class="basic-padding">
-                <h1 class="white-text">Clients</h1>
+                <h1>Clients</h1>
             </div>
             <div class="clients-container basic-padding">
-                <div class="clients-list flex-center-start flex-wrap">
-                    <!-- Aveda -->
-                    <div id="client-1" class="client-card flex-center-start no-flex-grow" onclick="expandClient('client-1')">
-                        <div class="client-logo-container" style="background-image: url('assets/client-logos/aveda.png')">
-                            <h2>Aveda</h2>
-                        </div>
-                        <div class="client-description">
-                            <p>Led the conceptualization and filming of all lo-fi and behind-the-scenes content for Aveda&apos;s Holiday 2023 Kit campaign and Aveda Congress. DNK Creative also spearheaded the Before/After photoshoot for two of the brand’s major franchises, contributing to creative direction on set. In addition, DNK collaborated closely with the internal team to manage the 'Real-Time' social media account, identifying and executing timely social media trends.</p>
-                            <div class="flex-center-start tags-list">
-                                <h6>Content Planning</h6>
-                                <h6>Content Creation</h6>
-                                <h6>Copywriting</h6>
-                                <h6>Trend Forecasting</h6>
-                                <h6>User Generated Content</h6>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Tri Star Construction -->
-                    <div id="client-2" class="client-card flex-center-start no-flex-grow" onclick="expandClient('client-2')">
-                        <div class="client-logo-container" style="background-image: url('assets/client-logos/tri-star-construction.png')">
-                            <h2>Tri Star Construction</h2>
-                        </div>
-                        <div class="client-description">
-                            <p>Conceptualized monthly content calendars that align with internal happenings and new projects as well as collaborating with internal teams to capture relevant content, while managing all copywriting across social accounts, including Instagram and LinkedIn.</p>
-                            <div class="flex-center-start tags-list">
-                                <h6>Social Media Management</h6>
-                                <h6>Content Planning</h6>
-                                <h6>Content Creation</h6>
-                                <h6>Copywriting</h6>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Spanx -->
-                    <div id="client-3" class="client-card flex-center-start no-flex-grow" onclick="expandClient('client-3')">
-                        <div class="client-logo-container" style="background-image: url('assets/client-logos/spanx.png')">
-                            <h2>Spanx</h2>
-                        </div>
-                        <div class="client-description">
-                            <p>Played a pivotal role in collaborating with the brand's creative agency to launch its TikTok platform. This encompassed projects such as brainstorming and overseeing paid influencer posts, crafting captions, and conceptualizing the brand's content franchises.</p>
-                            <div class="flex-center-start tags-list">
-                                <h6>Influencer Relations</h6>
-                                <h6>Content Planning</h6>
-                                <h6>Copywriting</h6>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Glosslab -->
-                    <div id="client-4" class="client-card flex-center-start no-flex-grow" onclick="expandClient('client-4')">
-                        <div class="client-logo-container" style="background-image: url('assets/client-logos/glosslab.png')">
-                            <h2>Glosslab</h2>
-                        </div>
-                        <div class="client-description">
-                            <p>Held the position of Head of Brand and Social Media at GLOSSLAB. In this role, she orchestrated and guided the annual marketing calendar, overseeing aspects like social media content strategy, product launches, photoshoot creative/art direction, partnerships, email concepts, and creative initiatives. Additionally, DNK successfully initiated and supervised the brand's ambassador and affiliate program.</p>
-                            <div class="flex-center-start tags-list flex-wrap">
-                                <h6>Social Media Strategyt</h6>
-                                <h6>Social Media Management</h6>
-                                <h6>Content Planning</h6>
-                                <h6>Content Creation</h6>
-                                <h6>Copywriting</h6>
-                                <h6>Trend Forecasting</h6>
-                                <h6>Influencer Relations</h6>
-                                <h6>User Generated Content</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Nike -->
-                    <div id="client-5" class="client-card flex-center-start no-flex-grow" onclick="expandClient('client-5')">
-                        <div class="client-logo-container" style="background-image: url('assets/client-logos/nike.png')">
-                            <h2>Nike</h2>
-                        </div>
-                        <div class="client-description">
-                            <p>Assisted in influencer research, content evaluation, and influencer communication for NIKE's 2023 kids YouTube campaign centered around the Women's World Cup.</p>
-                            <div class="flex-center-start tags-list flex-wrap">
-                                <h6>Influencer Relations</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- First Rounds on Me -->
-                    <div id="client-6" class="client-card flex-center-start no-flex-grow" onclick="expandClient('client-6')">
-                        <div class="client-logo-container" style="background-image: url('assets/client-logos/frome.png')">
-                            <h2>First Rounds On Me</h2>
-                        </div>
-                        <div class="client-description">
-                            <p>Partnered with the dating app First Rounds On Me to spearhead content partnerships, produce specialized monthly UGC social content as well hosts their weekly street interview YouTube series, handling guest scouting, crafting engaging questions, and conducting interviews.</p>
-                            <div class="flex-center-start tags-list flex-wrap">
-                                <h6>User Generated Content</h6>
-                                <h6>Influencer Relations</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Natura -->
-                    <div id="client-7" class="client-card flex-center-start no-flex-grow" onclick="expandClient('client-7')">
-                        <div class="client-logo-container" style="background-image: url('assets/client-logos/natura.png')">
-                            <h2>Natura</h2>
-                        </div>
-                        <div class="client-description">
-                            <p>Partnered with the brand's creative agency to develop monthly content calendars, bringing those plans to life through content creation and management. In addition to handling community management, DNK produce dedicated user-generated content to enhance engagement and authenticity.</p>
-                            <div class="flex-center-start tags-list flex-wrap">
-                                <h6>Social Media Management</h6>
-                                <h6>Content Creation</h6>
-                                <h6>Copywriting</h6>
-                                <h6>User Generated Content</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Serhant -->
-                    <div id="client-8" class="client-card flex-center-start no-flex-grow" onclick="expandClient('client-7')">
-                        <div class="client-logo-container" style="background-image: url('assets/client-logos/serhant.png')">
-                            <h2>Serhant</h2>
-                        </div>
-                        <div class="client-description">
-                            <p>As one of SERHANT Ventures brand strategists, DNK Creative collaborated with real estate agents and entrepreneurs nationwide, elevating their personal and business branding.</p>
-                            <div class="flex-center-start tags-list flex-wrap">
-                                <h6>Content Planning</h6>
-                                <h6>Trend Forecasting</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Alerion Aviation -->
-                    <div id="client-9" class="client-card flex-center-start no-flex-grow" onclick="expandClient('client-9')">
-                        <div class="client-logo-container" style="background-image: url('assets/client-logos/alerion.png')">
-                            <h2>Alerion Aviation</h2>
-                        </div>
-                        <div class="client-description">
-                            <p>Crafted a fresh social media strategy and led the conceptualization and execution of Alerion Aviation's Instagram content and monthly calendars. In close collaboration with the Florida-based team, DNK Creative ensured seamless execution, consistent posting, and strong engagement strategies.</p>
-                            <div class="flex-center-start tags-list flex-wrap">
-                                <h6>Social Media Strategy</h6>
-                                <h6>Social Media Management</h6>
-                                <h6>Content Planning</h6>
-                                <h6>Content Creation</h6>
-                                <h6>Copywriting</h6>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Chicos -->
-                    <div id="client-10" class="client-card flex-center-start no-flex-grow" onclick="expandClient('client-10')">
-                        <div class="client-logo-container" style="background-image: url('assets/client-logos/chicos.png')">
-                            <h2>Chicos</h2>
-                        </div>
-                        <div class="client-description">
-                            <p>Conceptualized Chico's monthly organic social calendars for platforms including Instagram, Facebook, and Pinterest as well as oversaw an in-house team of influencers, actively contributing to the development of social media concepts and the execution of content.</p>
-                            <div class="flex-center-start tags-list flex-wrap">
-                                <h6>Content Planning</h6>
-                                <h6>Influencer Relations</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Soma -->
-                    <div id="client-11" class="client-card flex-center-start no-flex-grow" onclick="expandClient('client-11')">
-                        <div class="client-logo-container" style="background-image: url('assets/client-logos/Soma.png')">
-                            <h2>Soma</h2>
-                        </div>
-                        <div class="client-description">
-                            <p>Oversaw an in-house team of influencers, actively contributing to the development of social media concepts and the execution of content.</p>
-                            <div class="flex-center-start tags-list flex-wrap">
-                                <h6>Content Planning</h6>
-                                <h6>Influencer Relations</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Saint James -->
-                    <div id="client-12" class="client-card flex-center-start no-flex-grow" onclick="expandClient('client-12')">
-                        <div class="client-logo-container" style="background-image: url('assets/client-logos/saint-james.png')">
-                            <h2>Saint James</h2>
-                        </div>
-                        <div class="client-description">
-                            <p>Partnered with Saint James Iced Tea to produce specialized monthly UGC social content.</p>
-                            <div class="flex-center-start tags-list flex-wrap">
-                                <h6>Trend Forecasting</h6>
-                                <h6>User Generated Content</h6>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- RPZL -->
-                    <div id="client-13" class="client-card flex-center-start no-flex-grow" onclick="expandClient('client-13')">
-                        <div class="client-logo-container" style="background-image: url('assets/client-logos/rpzl.png')">
-                            <h2>RPZL</h2>
-                        </div>
-                        <div class="client-description">
-                            <p>Managed influencer partnerships, which includes coordinating in-store invitations and implementing affiliate code/link tracking.</p>
-                            <div class="flex-center-start tags-list flex-wrap">
-                                <h6>Influencer Relations</h6>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- The Drip Kit -->
-                    <div id="client-14" class="client-card flex-center-start no-flex-grow" onclick="expandClient('client-14')">
-                        <div class="client-logo-container" style="background-image: url('assets/client-logos/dripkit.png')">
-                            <h2>The Drip Kit</h2>
-                        </div>
-                        <div class="client-description">
-                            <p>Captured Lo-Fi content onset for The Drip Kit's Fall 2023 Collection.</p>
-                            <div class="flex-center-start tags-list flex-wrap">
-                                <h6>Content Creation</h6>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Blink -->
-                    <div id="client-15" class="client-card flex-center-start no-flex-grow" onclick="expandClient('client-15')">
-                        <div class="client-logo-container" style="background-image: url('assets/client-logos/blink_1.png')">
-                            <h2>Blink Home Security</h2>
-                        </div>
-                        <div class="client-description">
-                            <p>Coordinated influencer communication for Blink's Prime Day Deal Promo on Amazon. Developed influencer briefs and acted as the liaison between the client and influencers, ensuring smooth collaboration and effective messaging</p>
-                            <div class="flex-center-start tags-list flex-wrap">
-                                
-                            </div>
-                        </div>
-                    </div>
+                <div class="clients-list flex-center-start flex-wrap" id="clients-list">
+                    <!-- Client cards will be generated here -->
                 </div>
-                
             </div>
         </section>
-        
     </main>
     <footer-component></footer-component>
 
     <script>
-        let expandedCard = null; // Keep track of the currently expanded card
-    
+        const clientsListElement = document.getElementById('clients-list');
+        let expandedCard = null;
+
+        clientList.forEach((client, index) => {
+            const clientCard = `
+                <div id="client-${index}" class="client-card flex-center-center no-flex-grow" onclick="expandClient('client-${index}')">
+                    <div class="client-logo-container" style="background-image: url('${client.logo}')">
+                        <h2>${client.name}</h2>
+                    </div>
+                    <div class="client-logo-container-overlay basic-padding" style=" opacity: 0;">
+                        <div class="client-logo-container" style="background-image: url('${client.logo}')">
+                            <h2>${client.name}</h2>
+                        </div>
+                        <br>
+                        <p>${client.description}</p>
+                        <div class="flex-center-start tags-list flex-wrap">
+                            ${client.services.map(service => `<h6>${service}</h6>`).join('')}
+                        </div>
+                    </div>
+                </div>
+            `;
+            clientsListElement.innerHTML += clientCard;
+        });
+
         function expandClient(clientId) {
-            const clientCard = document.getElementById(clientId); // Get the client-card div
-            const description = clientCard.querySelector('.client-description'); // Get the description inside the card
-            const otherCards = document.querySelectorAll('.client-card'); // Get all client cards
-            const clientsList = document.querySelector('.clients-list'); // The container of all the cards
-    
-            if (expandedCard !== clientCard) {
-                // If a different card is clicked, reset the previously expanded card
-                if (expandedCard) {
-                    collapseCard(expandedCard);
-                }
-    
-                // Set the position of the clicked card to absolute, starting from its current position
-                gsap.set(clientCard, {
-                    width: '100%',
-                });
-    
+            const clientCard = document.getElementById(clientId);
+            const overlay = clientCard.querySelector('.client-logo-container-overlay');
+            const otherCards = document.querySelectorAll('.client-card');
+
+            if (expandedCard && expandedCard !== clientCard) {
+                collapseCard(expandedCard);
+            }
+
+            if (parseFloat(overlay.style.opacity) === 0) {
                 expandedCard = clientCard;
-    
-                // Create a GSAP timeline for sequential animations
-                const tl = gsap.timeline();
-    
-                // Expand the clicked card's width and height to fill the clients list
-                tl.to(clientCard, {
-                    width: "100%", // Expand width to 100% of the parent container
-                    filter: "invert(1)", // Invert the entire card
+
+                gsap.to(overlay, {
+                    opacity: 1,
                     duration: 0.5,
-                    ease: "power2.out",
+                    ease: 'power2.out',
+                    onComplete: () => {
+                        const overlayBounds = overlay.getBoundingClientRect();
+                        const targetWidth = window.innerWidth * 0.8;
+                        const targetHeight = window.innerHeight * 0.8;
+
+                        // Calculate the target top position relative to the viewport and account for scrolling
+                        const scrollY = window.scrollY || window.pageYOffset;
+                        const targetTop = scrollY - (window.innerHeight * 0.25);
+
+                        // Animate the expansion of the overlay using width, height, and translations
+                        gsap.to(overlay, {
+                            duration: 0.8,
+                            ease: "power2.inOut",
+                            width: targetWidth,
+                            height: targetHeight,
+                            position: "fixed",
+                            top: targetTop + 'px',
+                            left: '10vw',
+                            zIndex: 1000,
+                        });
+                    }
                 });
-    
-                // Fade in the description content after the width expansion
-                tl.to(description, {
-                    opacity: 1, // Fade in the description
-                    display: "block", // Ensure it's visible
-                    duration: 0.5,
-                    ease: "power2.out",
-                }, ">"); // Use the ">" operator to ensure the second animation starts right after the first one
-    
-                // Fade out the other cards
+
                 otherCards.forEach(card => {
                     if (card !== clientCard) {
                         gsap.to(card, {
-                            opacity: 0.5, // Fade out other cards
+                            opacity: 0.5,
                             duration: 0.5,
-                            ease: "power2.out"
+                            ease: 'power2.out'
                         });
                     }
                 });
             } else {
-                // Collapse the card if it's clicked again
                 collapseCard(clientCard);
                 expandedCard = null;
             }
         }
-    
+
         function collapseCard(clientCard) {
-            const description = clientCard.querySelector('.client-description');
+            const overlay = clientCard.querySelector('.client-logo-container-overlay');
             const otherCards = document.querySelectorAll('.client-card');
-    
-            // Reset the order to default
-            clientCard.style.order = "1";
-            clientCard.classList.remove('expanded');
-    
-            // Record the card's current position for collapsing
-            const cardRect = clientCard.getBoundingClientRect();
-            const clientsList = document.querySelector('.clients-list');
-            const listRect = clientsList.getBoundingClientRect();
-    
-            // Create a GSAP timeline for sequential animations during collapse
-            const tl = gsap.timeline();
-    
-            // Fade out the description first
-            tl.to(description, {
-                opacity: 0, // Fade out the description
-                display: "none", // Hide it after fading out
+
+            gsap.to(overlay, {
+                opacity: 0,
                 duration: 0.5,
-                ease: "power2.inOut"
+                ease: 'power2.inOut',
+                width: "100%",
+                height: "100%",
+                x: 0,
+                y: 0,
+                position: "absolute",
+                zIndex: 1,
             });
-    
-            // Shrink the card back to its original position
-            tl.to(clientCard, {
-                width: "300px", // Shrink back to 1/3 width
-                filter: "invert(0)", // Revert the entire card back to normal
-                duration: 0.5,
-                ease: "power2.out",
-            }, ">");
-    
-            // Restore the opacity of other cards
+
             otherCards.forEach(card => {
                 gsap.to(card, {
-                    opacity: 1, // Restore opacity of other cards
+                    opacity: 1,
                     duration: 0.5,
-                    ease: "power2.out"
+                    ease: 'power2.out'
                 });
             });
         }
-    
-        // Initially hide all descriptions
+
         document.addEventListener('DOMContentLoaded', function() {
-            const descriptions = document.querySelectorAll('.client-description');
-            descriptions.forEach(description => {
-                description.style.display = 'none'; // Ensure they are hidden by default
+            const overlays = document.querySelectorAll('.client-logo-container-overlay');
+
+            overlays.forEach(overlay => {
+                overlay.style.opacity = 0;
             });
         });
     </script>

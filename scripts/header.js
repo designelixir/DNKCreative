@@ -1,3 +1,5 @@
+document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>');
+
 class Header extends HTMLElement {
   constructor() {
     super();
