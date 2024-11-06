@@ -31,6 +31,7 @@ main {min-height: 100vh;}
 .flex-wrap {flex-wrap: wrap}
 .no-flex-grow {flex: unset;}
 
+.mini-padding {padding: 25px;}
 .basic-padding {padding: 50px;}
 .basic-padding-small {padding: 25px;}
 .basic-padding-left-right {padding: 0 25px;}
@@ -66,7 +67,7 @@ h3 {
  strong {font-weight: 600;}
 h1 strong i {letter-spacing: -1px;}
 
-h6 {color: gray; text-transform: uppercase; font-weight: 100;}
+h6 {color: gray; text-transform: uppercase; font-weight: 100; margin: 0;}
 p {
     font-size: 18px;
     line-height: 24px;
@@ -88,16 +89,16 @@ p {
 #mainHeader {position: sticky;
     top: 0;
     width: 100%;
-    min-width: 99vw;
+    min-width: 100vw;
     z-index: 100; /* Ensure it's above other content */}
 .black-bg {background: black; color: white;}
 .white-bg {background: white; color: black;}
 .active-link {text-decoration: underline!important; opacity: 1!important}
 nav {width: 100%;}
 #navWrapper {z-index: 2; position: relative; width: 100%;}
-#menuButton {background: unset; border: unset; height: 35px; width: 35px; background-size: contain; background-repeat: no-repeat; background-position: center;}
+#menuButton {background: unset; border: unset; height: 35px; width: 35px; background-size: contain; background-repeat: no-repeat; background-position: center; margin-top: unset;}
 #menuButton:hover {cursor: pointer; transform: scale(1.1);}
-.black-bg #menuButton {background-image: url('assets/menu-white.svg')}
+.black-bg #menuButton {background-image: url('assets/menu-white.svg')!important;}
 .white-bg #menuButton {background-image: url('assets/menu-black.svg')}
 #menuButtonBlack {background: unset; border: unset; height: 35px; width: 35px; background-size: contain; background-repeat: no-repeat; background-position: center; background-image: url('assets/menu-black.svg')}
 
@@ -118,7 +119,6 @@ button:hover {cursor: pointer; background: black; border: 1px solid white; color
 .marquee-content ul {white-space: nowrap; margin: 0; padding: 0;}
 .marquee-content li {font-size: 18px; color: black; margin: 0 25px; list-style-type: none;}
 
-.logo-letter {height: 100px; margin: 2.5px; }
 
 #background-video {
     position: absolute;
@@ -140,7 +140,14 @@ button:hover {cursor: pointer; background: black; border: 1px solid white; color
 
 /* About */
 .half-div {width: 50%;}
-.danielle-hero {color: black; width: 100%; height: 700px; background-image: url('assets/danielle-portrait.png'); background-size: cover; background-position: center center; background-repeat: no-repeat;}
+.danielle-hero {background-size: cover; background-image: url('assets/danielle-portrait.png');  height: 600px; width: 100%; background-position: 0% 10%; background-repeat: no-repeat;}
+.danielle-hero-text { width: 50vw; max-width: 500px; min-width: 380px; background-image: url('assets/white-fade-5.png');
+ background-size: 100% 100%;}
+
+ @media screen and (max-width: 1200px){
+    .danielle-hero {background-size: auto 800px; }
+}
+
 
 /* Services */
 .service-section {padding: 75px 0; border-bottom: 2px solid white;}
@@ -152,12 +159,39 @@ button:hover {cursor: pointer; background: black; border: 1px solid white; color
 .service-details {display: none;}
 
 /* Clients */
-.client-logo-container {height: 300px; width: 300px; background-size: 90%; background-position: center; background-repeat: no-repeat; } 
-.client-logo-container-overlay {border: 1px solid black; border-radius: 5px; position: absolute; background: black; z-index: 2; filter: invert(1); height: 300px; width: 300px; background-size: 90%; background-position: center; background-repeat: no-repeat; } 
+.client-logo-container {width: 90%; height: 90%; max-width: 300px; background-size: 90%; background-position: center; background-repeat: no-repeat; border: 2px solid black; } 
+.client-logo-container-overlay {display: none; border-radius: 5px; position: absolute; background: black; z-index: 2; filter: invert(1); background-size: 90%; background-position: center; background-repeat: no-repeat; } 
 
+
+.details-client-logo {
+    filter: invert(1);
+    background-size: contain;
+    width: 250px;
+    
+}
+
+
+#popup {position: fixed; top: 0; left: 0; background: rgba(0,0,0,0.5); z-index: 99999999999; width: 100vw; height: 100vh;}
+.popup.hidden {
+    display: none;
+}
+
+.popup-content {
+    margin: 20px;
+    width: 100%;
+}
+
+.close-popup {
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
 .client-card {
-    max-width: 300px; /* 1/3 of the container width minus margin */
-    max-height: 300px;
+    width: 23.5%;
+    height: 23vw;
     
     
     background-color: #000; /* Default background */
@@ -168,12 +202,14 @@ button:hover {cursor: pointer; background: black; border: 1px solid white; color
     transition: all 0.5s ease;
     order: 1; /* Default order */
 }
-.client-card:hover {width: 310px; height: 310px; margin-right: 5px; margin-bottom: 5px; cursor: pointer;}
+
+.client-card:hover {transform: scale(1.1); }
 .clients-list {margin-top: 2vw; gap: 20px;}
 
+.client-details {background-color: white; padding: 25px; width: 90%; margin: 5%;}
 
 .client-logo-container h2 {opacity: 0!important;}
-.tags-list h6 {margin-right: 10px}
+.tags-list h6 {margin-right: 10px; margin-top: 10px;}
 
 /* Contact */
 input {font-size: 18px; padding: 20px; margin: 10px 0; min-width: 300px; width: 50vw; border-radius: 0; border: 1px solid white; background: black; color: white;}
@@ -183,12 +219,71 @@ textarea {font-size: 18px; padding: 20px; margin: 10px 0; min-width: 300px; widt
 
 footer {min-width: 99vw; width: 100%;}
 #designElixirCredits {text-decoration: none; font-size: 10px; color: white; opacity: 0.25}
-@media screen and (max-width: 480px) {
-  body {
-    background-color: lightgreen;
-  }
-}
+
 
 .fade-in{-webkit-animation:fade-in 1.2s cubic-bezier(.39,.575,.565,1.000) both;animation:fade-in 1.2s cubic-bezier(.39,.575,.565,1.000) both}
 @-webkit-keyframes fade-in{0%{opacity:0}100%{opacity:1}}@keyframes fade-in{0%{opacity:0}100%{opacity:1}}
+
+.logo-letter-bold {height: 75px; margin-right: 5px}
+.logo-letter {height: 80px; margin-right: 5px;}
+#T {margin-left: -20px;}
+
+.homepage-container { min-height: 450px; }
+.big-logo-container {height: 55vh;}
+.big-logo {height: 50%;}
+.reading-text { min-height: 175px; padding: 0 25px; max-width: 1200px}
+.reading-text h1 {text-align: center;}
+
+
+@media screen and (max-width: 1100px){
+    .client-card {width: 31%; height: 28vw;}
+}
+
+@media screen and (max-width: 900px) {
+    .logo-letter-bold {height: 50px;}
+    .logo-letter {height: 55px;}
+    .reading-text h1 {font-size: 52px; line-height: 60px;}
+    .half-div {width: 75%;}
+    
+    .danielle-hero {background-size: cover; background-position: 0% 100%; }
+}
+
+@media screen and (max-width: 750px){
+    .danielle-hero {background-size: cover; background-position: 20% 100%; }
+}
+
+@media screen and (max-width: 650px) {
+    .danielle-hero {background-size: cover; background-position: 30% 100%; }
+    .logo {height: 30px }
+    .basic-padding {padding: 25px;}
+    h1 {font-size: 42px; line-height: 48px;}
+    .half-div {width: 100%;}
+    
+    
+    .danielle-hero-text h2 {font-size: 48px; line-height: 54px;}
+    .danielle-hero-text h3 {font-size: 28px; line-height: 34px;}
+
+    .big-logo-container {justify-content: flex-start; align-items: flex-start;}
+    .logo-letter-bold {height: 45px;}
+    .DNK {margin-bottom: 10px;}
+    .learn-more-button {justify-content: flex-start;}
+    .logo-letter {height: 50px;}
+    .big-logo {padding: 25px!important; flex-direction: column; align-items: flex-start;}
+    .reading-text h1 {text-align: left!important;}
+
+    .client-card {
+        width: 47%; height: 44vw;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .danielle-hero-text { max-width: unset; min-width: unset; width: 75%;}
+}
+
+.testimonials-container {margin: 20px 0; max-width: calc(100vw - 50px); overflow-x: scroll!important;}
+.testimonial {background: black; opacity: 0.5; margin-right: 15%; color: white; padding: 25px; min-width: 60vw; width: 60vw;}
+
+
+
+
 

@@ -17,9 +17,25 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
 
+<script>
+    const testimonials = [
+        { text: "Partnering with DNK Creative has been one of the best business decisions I've made. Dani's exceptional work ethic and energy take every project to new heights, making the process both productive and enjoyable—a rare combination. She's a rising star in digital marketing and has been a game-changer for my business.", author: "-Joseph Feminella, Founder, First Rounds On Me" },
+        { text: "DNK Creative's insights have transformed our marketing strategy. Dani's creativity and dedication are unmatched, and she consistently goes above and beyond to deliver exceptional results. I couldn’t ask for a better partner in growing our brand.", author: "-Sarah Anderson, CEO, BrightWave Innovations" },
+        { text: "Working with DNK Creative has elevated our brand's digital presence. Dani's attention to detail and innovative ideas have brought our vision to life, resonating with our audience like never before. A true asset to any team.", author: "-Mark Tully, Head of Marketing, EverGreen Supplies" }
+    ];
+</script>
+
 <body class="flex-center-center flex-column white-bg">
     <header-component data-nav="Clients" data-style="black" id="navigation"></header-component>
+    
     <main>
+        <!-- Popup container with overlay background effect -->
+        <div id="popup" class="popup hidden flex-center-center">
+            <div class="client-details flex-center-center no-flex-grow">
+                <div class="popup-content" id="popup-content"></div>
+            </div>
+        </div>
+        
         <section>
             <div class="basic-padding">
                 <h1>Clients</h1>
@@ -30,12 +46,88 @@
                 </div>
             </div>
         </section>
+        <section class="basic-padding">
+            <h1 >Testimonials</h1>
+            <div class="testimonials-container flex-start-start">
+                <div class="testimonial" style="opacity: 1">
+                    <p><i>Partnering with Dani and DNK Creative has been one of the best business decisions I've made. Dani's exceptional work ethic combined with her infectious energy takes every project to new heights, making the entire process both productive and enjoyable—an incredibly rare combination. She's undoubtedly one of the rising stars in the digital marketing industry, and working with her has been nothing short of a game-changer for my business.</i></p>
+                    <br>
+                    <p><strong>- Joseph Feminella</strong><br> <i>Founder, First Rounds On Me</i></p>
+                </div>
+                <div class="testimonial">
+                    <p><i>DNK Creative has been instrumental in elevating our social media presence. Her creativity, deep understanding of social media platforms, and strategic approach have significantly increased our engagement and visibility. Dani not only developed content that resonated with our audience but also helped us navigate ever-changing trends with ease. Her professionalism and commitment to delivering results made a huge impact on our digital marketing efforts. I highly recommend her to anyone looking to enhance their social media strategy.</i></p>
+                    <br>
+                    <p><strong>- Richard Ziskind</strong><br><i>Chief Commercial Officer, Alerion Aviation</i></p>
+                </div>
+                <div class="testimonial">
+                    <p><i>Working with Dani at DNK Creative has been a pleasure. From day one, Dani took the time to understand our brand and goals.  Her responsiveness, strategic approach, and upbeat energy have made her a valuable partner and we highly recommend DNK Creative to anyone looking to elevate their social media presence.</i></p>
+                    <br>
+                    <p><strong>- Jack Irushalmi</strong><br><i>President + CEO, Tri-Star Construction</i></p>
+                </div>
+            </div>
+            <div class="flex-center-start">
+                <button onclick="toggleTestimonial(false)">&larr;</button>
+                <button onclick="toggleTestimonial(true)">&rarr;</button>
+            </div>
+        </section>
+        <div style="height: 100px;"></div>
     </main>
+    
     <footer-component></footer-component>
 
     <script>
+
+$('.testimonial').each(function(index) {
+    $(this).css('order', index + 1); // Start with first testimonial having order 1
+    $(this).css('opacity', index === 0 ? 1 : 0.5); // Set opacity: 1 for first, 0.5 for others
+});
+
+function toggleTestimonial(forward) {
+    var testimonials = $('.testimonial');
+    var focus = $('.focus');
+    var focusIndex = testimonials.index(focus);
+
+    // Calculate the new index based on direction, with wrapping
+    var nextIndex;
+    if (forward && focusIndex > 0) {
+        nextIndex = (focusIndex + 1) % testimonials.length;
+    } else if(forward && focusIndex === 0) {
+        nextIndex = (focusIndex + 2) % testimonials.length;
+    }else {
+        nextIndex = (focusIndex - 1 + testimonials.length) % testimonials.length;
+    }
+
+    // Fade current focus to 0.5 opacity
+    gsap.to(focus, {
+        opacity: 0.5,
+        duration: 0.5,
+        ease: 'power2.out',
+        onComplete: function() {
+            // After reaching 0.5 opacity, update the order and focus
+            focus.removeClass('focus').css('order', testimonials.length); // Move current focus to the end
+
+            // Set the new focus element and bring it to the front
+            var newFocus = testimonials.eq(nextIndex);
+            newFocus.addClass('focus').css('order', 1);
+
+            // Restore opacity of the new focus element to 1
+            gsap.fromTo(newFocus, { opacity: 0.5 }, { opacity: 1, duration: 0.5, ease: 'power2.in' });
+
+            // Update order of other testimonials for the carousel effect
+            testimonials.each(function(i) {
+                if (i !== nextIndex) {
+                    $(this).css('order', ((i - nextIndex + testimonials.length) % testimonials.length) + 2);
+                }
+            });
+        }
+    });
+}
+
+
+
+
         const clientsListElement = document.getElementById('clients-list');
-        let expandedCard = null;
+        let isPopupVisible = false;
 
         clientList.forEach((client, index) => {
             const clientCard = `
@@ -43,9 +135,10 @@
                     <div class="client-logo-container" style="background-image: url('${client.logo}')">
                         <h2>${client.name}</h2>
                     </div>
-                    <div class="client-logo-container-overlay basic-padding" style=" opacity: 0;">
-                        <div class="client-logo-container" style="background-image: url('${client.logo}')">
-                            <h2>${client.name}</h2>
+                    <div class="client-logo-container-overlay box-shadow basic-padding" style="opacity: 0;">
+                        <div class="flex-start-spacebetween">
+                            <img src="${client.logo}" class="details-client-logo" alt="${client.name} Logo">
+                            <button onclick="expandClient()" style="border: unset; margin: 0; padding: 15px;">X</button>
                         </div>
                         <br>
                         <p>${client.description}</p>
@@ -59,91 +152,64 @@
         });
 
         function expandClient(clientId) {
-            const clientCard = document.getElementById(clientId);
-            const overlay = clientCard.querySelector('.client-logo-container-overlay');
-            const otherCards = document.querySelectorAll('.client-card');
+            const popup = document.getElementById('popup');
+            const popupContent = document.getElementById('popup-content');
 
-            if (expandedCard && expandedCard !== clientCard) {
-                collapseCard(expandedCard);
-            }
+            if (!isPopupVisible) {
+                // Show popup with selected client content
+                const clientCard = document.getElementById(clientId);
+                const overlayContent = clientCard.querySelector('.client-logo-container-overlay');
+                popupContent.innerHTML = overlayContent.innerHTML;
+                
+                // Display popup container
+                popup.style.display = 'flex';
 
-            if (parseFloat(overlay.style.opacity) === 0) {
-                expandedCard = clientCard;
+                // Animate the popup container expansion (fully transparent)
+                gsap.fromTo(
+                    popup, 
+                    { scale: 0.8, backgroundColor: 'rgba(0, 0, 0, 0)' }, 
+                    { scale: 1, duration: 0.2, ease: 'power1.out' }
+                );
 
-                gsap.to(overlay, {
-                    opacity: 1,
-                    duration: 0.5,
-                    ease: 'power2.out',
-                    onComplete: () => {
-                        const overlayBounds = overlay.getBoundingClientRect();
-                        const targetWidth = window.innerWidth * 0.8;
-                        const targetHeight = window.innerHeight * 0.8;
-
-                        // Calculate the target top position relative to the viewport and account for scrolling
-                        const scrollY = window.scrollY || window.pageYOffset;
-                        const targetTop = scrollY - (window.innerHeight * 0.25);
-
-                        // Animate the expansion of the overlay using width, height, and translations
-                        gsap.to(overlay, {
-                            duration: 0.8,
-                            ease: "power2.inOut",
-                            width: targetWidth,
-                            height: targetHeight,
-                            position: "fixed",
-                            top: targetTop + 'px',
-                            left: '10vw',
-                            zIndex: 1000,
-                        });
-                    }
-                });
-
-                otherCards.forEach(card => {
-                    if (card !== clientCard) {
-                        gsap.to(card, {
-                            opacity: 0.5,
-                            duration: 0.5,
-                            ease: 'power2.out'
-                        });
-                    }
-                });
+                // Animate popup-content expansion and fade in of popup background simultaneously
+                gsap.fromTo(
+                    popupContent, 
+                    { scale: 0.5, opacity: 0 }, 
+                    { scale: 1, opacity: 1, duration: 0.5, ease: 'power2.out', delay: 0.2 }
+                );
+                gsap.to(
+                    popup, 
+                    { backgroundColor: 'rgba(0, 0, 0, 0.5)', duration: 0.5, ease: 'power2.out', delay: 0.2 }
+                );
             } else {
-                collapseCard(clientCard);
-                expandedCard = null;
-            }
-        }
-
-        function collapseCard(clientCard) {
-            const overlay = clientCard.querySelector('.client-logo-container-overlay');
-            const otherCards = document.querySelectorAll('.client-card');
-
-            gsap.to(overlay, {
-                opacity: 0,
-                duration: 0.5,
-                ease: 'power2.inOut',
-                width: "100%",
-                height: "100%",
-                x: 0,
-                y: 0,
-                position: "absolute",
-                zIndex: 1,
-            });
-
-            otherCards.forEach(card => {
-                gsap.to(card, {
-                    opacity: 1,
+                // Animate closing the popup background, popup container, and content
+                gsap.to(popupContent, {
+                    scale: 0.5,
+                    opacity: 0,
                     duration: 0.5,
-                    ease: 'power2.out'
+                    ease: 'power2.in'
                 });
-            });
+                gsap.to(popup, {
+                    backgroundColor: 'rgba(0, 0, 0, 0)',
+                    duration: 0.5,
+                    ease: 'power2.in',
+                    delay: 0.2
+                });
+                gsap.to(popup, {
+                    scale: 0.8,
+                    duration: 0.2,
+                    ease: 'power1.in',
+                    delay: 0.4,
+                    onComplete: () => {
+                        popup.style.display = 'none';
+                        popupContent.innerHTML = ''; // Clear content
+                    }
+                });
+            }
+            
+            // Toggle the popup state
+            isPopupVisible = !isPopupVisible;
         }
-
-        document.addEventListener('DOMContentLoaded', function() {
-            const overlays = document.querySelectorAll('.client-logo-container-overlay');
-
-            overlays.forEach(overlay => {
-                overlay.style.opacity = 0;
-            });
-        });
     </script>
 </body>
 

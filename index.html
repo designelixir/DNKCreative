@@ -13,143 +13,149 @@
     <link rel="preload" href="assets/fonts/SFProDisplay-BlackItalic.woff2" as="font" type="font/woff2" crossorigin>
     <script src="scripts/index.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-
-    
+    <script type="module" src="https://cdn.jsdelivr.net/npm/player.style/sutro/+esm"></script> 
     
 </head>
+
 
 <body>
     
 
-    <main>
-        <div style="height: 100vh; background: rgba(0,0,0,0.25);">
-            <video id="background-video" autoplay muted loop playsinline>
-                <source src="assets/diamond(1).mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <hamburger-component data-nav="Home" data-style="black" id="navigation"></hamburger-component>
-            <div class="big-logo flex-start-center flex-column basic-padding" style=" height: calc(100% - 225px);" onclick="controls('video')">
-                <div class="flex-center-start no-flex-grow" >
-                    <img class="logo-letter" src="assets/letters/white/D.svg" alt="logo letter D"/>
-                    <img class="logo-letter" src="assets/letters/white/N.svg" alt="logo letter N"/>
-                    <img class="logo-letter" src="assets/letters/white/K.svg" alt="logo letter K"/>
-                    <img class="logo-letter" src="assets/letters/white/C.svg" alt="logo letter C"/>
-                    <img class="logo-letter" src="assets/letters/white/R.svg" alt="logo letter R"/>
-                    <img class="logo-letter" src="assets/letters/white/E.svg" alt="logo letter E"/>
-                    <img class="logo-letter" src="assets/letters/white/A.svg" alt="logo letter A"/>
-                    <img class="logo-letter" src="assets/letters/white/T.svg" style="margin-left: -10px" alt="logo letter T"/>
-                    <img class="logo-letter" src="assets/letters/white/I.svg" alt="logo letter I"/>
-                    <img class="logo-letter" src="assets/letters/white/V.svg" alt="logo letter V"/>
-                    <img class="logo-letter" src="assets/letters/white/E.svg" alt="logo letter E"/>
+    <main class="black-bg">
+        <hamburger-component data-nav="Home" data-style="black" id="navigation"></hamburger-component>
+        <div class="homepage-container" style=" height: calc(100vh - 204px); ">
+            
+            <div class="flex-center-center flex-column big-logo-container">
+                <div class="big-logo flex-center-start no-flex-grow basic-padding">
+                    <div class="DNK flex-center-start no-flex-grow">
+                        <img class="logo-letter-bold" src="assets/letters/white/D.svg" alt="logo letter D" />
+                        <img class="logo-letter-bold" src="assets/letters/white/N.svg" alt="logo letter N"/>
+                        <img class="logo-letter-bold" src="assets/letters/white/K.svg" alt="logo letter K"/>
+                    </div>
+                    <div class="CREATIVE flex-center-start no-flex-grow">
+                        <img class="logo-letter" src="assets/letters/white/C.svg" alt="logo letter C" />
+                        <img class="logo-letter" src="assets/letters/white/R.svg" alt="logo letter R" />
+                        <img class="logo-letter" src="assets/letters/white/E.svg" alt="logo letter E" />
+                        <img class="logo-letter" src="assets/letters/white/A.svg" alt="logo letter A" />
+                        <img class="logo-letter" src="assets/letters/white/T.svg" alt="logo letter T" id="T" />
+                        <img class="logo-letter" src="assets/letters/white/I.svg" alt="logo letter I"/>
+                        <img class="logo-letter" src="assets/letters/white/V.svg" alt="logo letter V" />
+                        <img class="logo-letter" src="assets/letters/white/E.svg" alt="logo letter EE" />
+                    </div>
                 </div>
-                <div class="flex-start-start no-flex-grow flex-column full-width">
+                <div class="flex-start-start fade-in-after reading-text">
+                    <h1>Curating compelling content that <strong><span id="filler-text"></span></strong></h1>
                     
-                    <h2 class="white-text slow-type" style="font-weight: 200; margin-top: 25px;">
-                        <span class="show-once"></span>
-                        <span class="show-repeatedly"></span>
-                    </h2>
-                    <button id="learnMore" style="opacity: 0" onclick="window.open('/DNKCreative/about', 'self')">learn more</button>
                 </div>
-                
+                <div style="padding: 0 25px" class="fade-in-after flex-center-center">
+                    <button id="learnMore" class="hover" onclick="window.open('/DNKCreative/about', 'self')">learn more</button>
+                </div>
             </div>
             
-            <div class="marquee flex-center-start" onclick="controls('marquee')">
-                <div class="marquee-content flex-center-start">
-                    <ul class="flex-center-start">
-                        <li>Social Media Strategy</li>
-                        <li>Content Planning</li>
-                        <li>Content Creation</li>
-                        <li>Copywriting</li>
-                        <li>User Generated Content</li>
-                        <li>Trend Forecasting</li>
-                        <li>Influencer Relations</li>
-                    </ul>
-                    <ul class="flex-center-start">
-                        <li>Social Media Strategy</li>
-                        <li>Content Planning</li>
-                        <li>Content Creation</li>
-                        <li>Copywriting</li>
-                        <li>User Generated Content</li>
-                        <li>Trend Forecasting</li>
-                        <li>Influencer Relations</li>
-                    </ul>
-                </div>
+        </div>
+        <div class="marquee fade-in-after flex-center-start" onclick="controls('marquee')">
+            <div class="marquee-content flex-center-start">
+                <ul class="flex-center-start">
+                    <li>Social Media Strategy</li>
+                    <li>Content Planning</li>
+                    <li>Content Creation</li>
+                    <li>Copywriting</li>
+                    <li>User Generated Content</li>
+                    <li>Trend Forecasting</li>
+                    <li>Influencer Relations</li>
+                </ul>
+                <ul class="flex-center-start">
+                    <li>Social Media Strategy</li>
+                    <li>Content Planning</li>
+                    <li>Content Creation</li>
+                    <li>Copywriting</li>
+                    <li>User Generated Content</li>
+                    <li>Trend Forecasting</li>
+                    <li>Influencer Relations</li>
+                </ul>
             </div>
         </div>
-        
-            
-        
-        <section>
-            
-            
-            
-            <!-- Add your main content here -->
-        </section>
     </main>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-    // Select all elements with the class 'logo-letter'
+    // Select all elements with the class 'logo-letter' and .fade-in-after
+    gsap.set(".fade-in-after", { opacity: 0 }); // Initially hide .fade-in-after
+    gsap.set("#learnMore", { opacity: 0 }); // Initially hide the button as well
+
+    // Animate the logo letters
     gsap.from(".logo-letter", {
-        opacity: 0,               // Start with zero opacity for a fade-in effect
-        stagger: 0.15,            // Stagger the appearance with a 0.1-second delay between each letter
-        duration: 0.1,            // Animation duration for each letter
-        ease: "power2.out"        // Easing for a smooth transition
+        opacity: 0,
+        stagger: 0.1,  // Stagger the appearance with a 0.1-second delay between each letter
+        duration: 0.5, // Animation duration for each letter
+        ease: "power2.out",
+        onComplete: () => {
+            // Fade in elements with the .fade-in-after class
+            gsap.to(".fade-in-after", {
+                opacity: 1,
+                duration: 1,  // Adjust duration for the fade-in effect
+                ease: "power2.out",
+                onComplete: () => {
+                    // Start typing animation immediately after fade-in
+                    animateText();
+                }
+            });
+        }
     });
 
-    // Add a 2-second delay after the GSAP animation completes before starting the typing animation
-    setTimeout(() => {
-        const showOnceElement = document.querySelector('.show-once');
-        const showRepeatedlyElement = document.querySelector('.show-repeatedly');
-        const learnMoreButton = document.getElementById('learnMore');
-        const repeatText = "...";
+    const fillerText = [
+        "speaks your brand's language",
+        "engages your community", 
+        "spreads your message"
+    ];
+    
+    const fillerElement = document.getElementById('filler-text');
+    let currentIndex = 0;
 
-        // Initially hide the content of both elements and set button opacity to 0
-        showOnceElement.textContent = "";
-        showRepeatedlyElement.textContent = "";
-        gsap.set(learnMoreButton, { opacity: 0 });
+    function typeText(text) {
+        let index = 0;
+        return new Promise((resolve) => {
+            const interval = setInterval(() => {
+                fillerElement.textContent += text[index];
+                index++;
+                if (index === text.length) {
+                    clearInterval(interval);
+                    setTimeout(resolve, 1000); // Wait 1 second after typing before deleting or moving to the next action
+                }
+            }, 100); // Adjust typing speed (in milliseconds)
+        });
+    }
 
-        function typeText(element, text) {
-            let index = 0;
-            return new Promise((resolve) => {
-                const interval = setInterval(() => {
-                    element.textContent += text[index];
-                    index++;
-                    if (index === text.length) {
-                        clearInterval(interval);
-                        setTimeout(resolve, 1000); // Wait 1 second after typing before deleting or moving to the next action
-                    }
-                }, 100); // Adjust typing speed (in milliseconds)
-            });
+    function deleteText() {
+        return new Promise((resolve) => {
+            const interval = setInterval(() => {
+                fillerElement.textContent = fillerElement.textContent.slice(0, -1);
+                if (fillerElement.textContent.length === 0) {
+                    clearInterval(interval);
+                    setTimeout(resolve, 500); // Wait 0.5 seconds before typing the next text
+                }
+            }, 50); // Adjust deleting speed (in milliseconds)
+        });
+    }
+
+    async function animateText() {
+        // Step 1: Type the first text
+        const text = fillerText[currentIndex];
+        await typeText(text);
+
+        // Step 2: Fade in the button after the first text is fully typed
+        gsap.to("#learnMore", {
+            opacity: 1,
+            duration: 1,  // Adjust duration for the fade-in effect
+            ease: "power2.out"
+        });
+
+        // Step 3: Continue with the typing and deleting loop
+        while (true) {
+            await deleteText();
+            currentIndex = (currentIndex + 1) % fillerText.length; // Loop through the array
+            await typeText(fillerText[currentIndex]);
         }
-
-        function deleteText(element) {
-            return new Promise((resolve) => {
-                const interval = setInterval(() => {
-                    element.textContent = element.textContent.slice(0, -1);
-                    if (element.textContent.length === 0) {
-                        clearInterval(interval);
-                        setTimeout(resolve, 500); // Wait 0.5 seconds before typing the next text
-                    }
-                }, 50); // Adjust deleting speed (in milliseconds)
-            });
-        }
-
-        async function animateText() {
-            // Step 1: Type "curating" once
-            await typeText(showOnceElement, "curating");
-
-            // Step 2: Animate the typing and deleting of "..." in a loop
-            // Step 3: Fade in the learnMore button once the animation starts
-            gsap.to(learnMoreButton, { opacity: 1, duration: 1, ease: "power2.out" });
-
-            while (true) {
-                await typeText(showRepeatedlyElement, repeatText);
-                await deleteText(showRepeatedlyElement);
-            }
-        }
-
-        animateText();
-    }, 3000); // Delay for 2 seconds after the .logo-letter animation completes (total delay is 3 seconds)
+    }
 });
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -164,26 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-    const video = document.getElementById('background-video');
-
-    // Add an event listener to fade in the video once it's loaded
-    video.addEventListener('canplay', () => {
-        video.style.opacity = '1'; // Fade in the video
-    });
-});
-
-function controls(which){
     
-    if (which === 'marquee'){
-        $('.marquee').css('display', 'none')
-    }
-
-    else if (which === 'video'){
-        $('#background-video').attr('src', '')
-    }
-}
-
     </script>
 </body>
 
