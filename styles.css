@@ -99,7 +99,7 @@ nav {width: 100%;}
 #menuButton {background: unset; border: unset; height: 35px; width: 35px; background-size: contain; background-repeat: no-repeat; background-position: center; margin-top: unset;}
 #menuButton:hover {cursor: pointer; transform: scale(1.1);}
 .black-bg #menuButton {background-image: url('assets/menu-white.svg')!important;}
-.white-bg #menuButton {background-image: url('assets/menu-black.svg')}
+.white-bg #menuButton {filter: invert(1)}
 #menuButtonBlack {background: unset; border: unset; height: 35px; width: 35px; background-size: contain; background-repeat: no-repeat; background-position: center; background-image: url('assets/menu-black.svg')}
 
 
