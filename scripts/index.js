@@ -4,25 +4,6 @@ document.write('<script src="scripts/header.js"></script>');
 document.write('<script src="scripts/hamburger.js"></script>');
 
 
-document.addEventListener('DOMContentLoaded', function () {
-    const menuButton = document.getElementById('menuButton');
-    const fullMenu = document.getElementById('fullMenu');
-    let menuOpen = false; // Track the state of the menu
-
-    // Initially hide the menu
-    gsap.set(fullMenu, { y: '-100%', height: 0, autoAlpha: 0 });
-
-    menuButton.addEventListener('click', function () {
-        if (menuOpen) {
-            // Slide the menu up and hide
-            gsap.to(fullMenu, { duration: 0.5, y: '-100%', height: 0, autoAlpha: 0, ease: 'power2.inOut' });
-        } else {
-            // Slide the menu down and show
-            gsap.to(fullMenu, { duration: 0.5, y: '0%', height: 'calc(100vh - 100px)', autoAlpha: 1, ease: 'power2.inOut' });
-        }
-        menuOpen = !menuOpen; // Toggle the menu state
-    });
-});
 
 document.addEventListener('DOMContentLoaded', function () {
     // Register ScrollTrigger with GSAP

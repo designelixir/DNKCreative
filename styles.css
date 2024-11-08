@@ -96,15 +96,13 @@ p {
 .active-link {text-decoration: underline!important; opacity: 1!important}
 nav {width: 100%;}
 #navWrapper {z-index: 2; position: relative; width: 100%;}
-#menuButton {background: unset; border: unset; height: 35px; width: 35px; background-size: contain; background-repeat: no-repeat; background-position: center; margin-top: unset;}
+#menuButton {background: unset; border: unset; padding: 0; height: 35px; width: 35px; background-size: contain; background-repeat: no-repeat; background-position: center; margin-top: unset;}
+#menuButton img {height: 100%;}
 #menuButton:hover {cursor: pointer; transform: scale(1.1);}
-.black-bg #menuButton {background-image: url('assets/menu-white.svg')!important;}
-.white-bg #menuButton {filter: invert(1)}
-#menuButtonBlack {background: unset; border: unset; height: 35px; width: 35px; background-size: contain; background-repeat: no-repeat; background-position: center; background-image: url('assets/menu-black.svg')}
 
+.homepage-nav .logo {display: none;}
 
-.white-bg #fullMenu {background: white;}
-#fullMenu {background: black; height: calc(100vh - 100px); width: 100%;}
+#fullMenu { height: calc(100vh - 100px); width: 100%;}
 .nav-link {font-size: 24px; margin: 20px 0; opacity: 0.6; color: inherit!important; text-decoration: unset;}
 .nav-link:hover {cursor: pointer; transform: scale(1.01); opacity: 1!important;}
 
@@ -157,6 +155,13 @@ button:hover {cursor: pointer; background: black; border: 1px solid white; color
 .service h4 {margin: 0; line-height: 0;}
 .service button {background: unset; color: white; border: unset; font-size: 48px; font-weight: 100;}
 .service-details {display: none;}
+
+@media screen and (max-width: 900px){
+    .service-section-wrapper {flex-direction: column;}
+    .service-section-wrapper h2 {margin-bottom: 25px;}
+    .service-section-wrapper .half-div {width: 100%!important;}
+}
+
 
 /* Clients */
 .client-logo-container {width: 90%; height: 90%; max-width: 300px; background-size: 90%; background-position: center; background-repeat: no-repeat; border: 2px solid black; } 

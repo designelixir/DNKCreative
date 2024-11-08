@@ -14,6 +14,9 @@ class Header extends HTMLElement {
 
     // Set the logo source based on navType
     const logoSrc = navType === 'white' ? 'assets/dnk-creative-logo-black.svg' : 'assets/dnk-creative-logo-white.svg';
+    const menuSrc = navType === 'white' ? 'assets/menu-black.svg' : 'assets/menu-white.svg';
+    const menuCloseSrc = navType === 'white' ? 'assets/x-black.svg' : 'assets/x-white.svg';
+    const menuColor = navType === 'white' ? "white" : "black";
 
     this.innerHTML = `
     <header id="mainHeader" class="basic-padding flex-center-center ${headerClass}">
@@ -23,10 +26,10 @@ class Header extends HTMLElement {
                     <img src="${logoSrc}" class="logo">
                 </a>
                 <button id="menuButton">
-                    <span style="opacity: 0;">Menu</span>
+                    <img id="menuButtonSrc" src="${menuSrc}" alt="menu">
                 </button>
             </div>
-            <div id="fullMenu" class="flex-center-center flex-column">
+            <div id="fullMenu" class="flex-center-center flex-column" style="background-color: ${menuColor}">
                 <a id="Home" class="nav-link" href="/DNKCreative/">Home</a>
                 <a id="About" class="nav-link" href="/DNKCreative/about">About</a>
                 <a id="Services" class="nav-link" href="/DNKCreative/services">Services</a>
@@ -45,6 +48,30 @@ class Header extends HTMLElement {
   }
 }
 
+document.addEventListener('DOMContentLoaded', function () {
+  const menuButton = document.getElementById('menuButton');
+  const fullMenu = document.getElementById('fullMenu');
+  const menuButtonSrc = document.getElementById('menuButtonSrc');
+  const menuSrc = menuButtonSrc.getAttribute('src');
+  const menuCloseSrc = menuSrc === 'assets/menu-black.svg' ? 'assets/x-black.svg' : 'assets/x-white.svg';
+  let menuOpen = false; // Track the state of the menu
+
+  // Initially hide the menu
+  gsap.set(fullMenu, { y: '-100%', height: 0, autoAlpha: 0 });
+
+  menuButton.addEventListener('click', function () {
+      if (menuOpen) {
+          // Slide the menu up and hide, switch to menu icon
+          gsap.to(fullMenu, { duration: 0.5, y: '-100%', height: 0, autoAlpha: 0, ease: 'power2.inOut' });
+          menuButtonSrc.src = menuSrc;
+      } else {
+          // Slide the menu down and show, switch to close icon
+          gsap.to(fullMenu, { duration: 0.5, y: '0%', height: 'calc(100vh - 100px)', autoAlpha: 1, ease: 'power2.inOut' });
+          menuButtonSrc.src = menuCloseSrc;
+      }
+      menuOpen = !menuOpen; // Toggle the menu state
+  });
+});
+
 // Define the custom element
 customElements.define('header-component', Header);
-
