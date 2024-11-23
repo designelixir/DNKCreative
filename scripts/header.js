@@ -32,7 +32,6 @@ class Header extends HTMLElement {
             <div id="fullMenu" class="flex-center-center flex-column" style="background-color: ${menuColor}">
                 <a id="Home" class="nav-link" href="/DNKCreative/">Home</a>
                 <a id="About" class="nav-link" href="/DNKCreative/about">About</a>
-                <a id="Services" class="nav-link" href="/DNKCreative/services">Services</a>
                 <a id="Clients" class="nav-link" href="/DNKCreative/clients">Clients</a>
                 <a id="Contact" class="nav-link" href="/DNKCreative/contact">Contact</a>
             </div>

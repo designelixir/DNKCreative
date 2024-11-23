@@ -154,7 +154,7 @@ button:hover {cursor: pointer; background: black; border: 1px solid white; color
 
 
 /* Services */
-.service-section {padding: 75px 0; border-bottom: 2px solid white;}
+.service-section {padding: 75px 0; border-bottom: 2px solid white; color: white; background: black;}
 .service-subsection {border-top: 1px solid white; border-bottom: 1px solid white; padding: 25px 0;}
 .service:hover {cursor: pointer;}
 .service:hover h4 {font-weight: 500;}
@@ -301,3 +301,6 @@ footer {min-width: 99vw; width: 100%;}
 
 
 
+.ugc-video {height: 400px; width: 60vw; margin: 50px 0; background-position: center; background-size: cover; background-repeat: no-repeat;}
+.ugc-left {float: left;}
+.ugc-right {float: right;}

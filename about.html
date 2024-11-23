@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="fonts.css">
     <link rel="preload" href="assets/fonts/SFProDisplay-BlackItalic.woff2" as="font" type="font/woff2" crossorigin>
     <script src="scripts/index.js"></script>
+    <script src="scripts/marquee.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/player.style/sutro/+esm"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
@@ -24,33 +25,83 @@
     <main>
         
 
-        <section >
+        
             
             <div class="basic-padding">
-                <h1><i style="font-weight: 200;">You're here, so you might be wondering:</i> What is DNK CREATIVE all about?</h1>
+                <!-- <h1><i style="font-weight: 200;" id="header1">You're here, so you might be wondering:</i><span id="header2"> What is DNK CREATIVE all about?</span></h1> -->
+                 <h1>Strategizing, developing, and producing scroll-stopping content</h1>
                 <div class="half-div basic-padding-top-bottom">
-                    <p>We are a digital agency with a mission to assist companies in <strong><i>strategizing, conceptualizing,</i></strong> and <strong><i>producing</i></strong> social-friendly creative content. </p>
+                    <p id="paragraph1">Social platforms have become more sophisticated, algorithms more complex, and audience expectations higher than ever. Today’s audiences demand authenticity, relevance, and personalization. Standing out isn’t about following trends — it’s about setting them.</p>
                     <br>
-                    <p>Whether it's executing social media strategies, creating user-generated content, building content calendars, providing direction for photoshoots (and the list goes on), we ensure that <strong>every narrative we craft aligns with your brand identity and is driven by a compelling strategy.</strong></p>
+                    <p id="paragraph2">Social media isn’t just a place to post content; it’s a fast-paced, interactive arena where brands must continuously shape their identity, engage, and evolve in real time across not one, not two, but multiple platforms — and often all at once.</p>
+                    <p id="paragraph3">At DNK Creative, we don’t just keep up with these changes —<strong> we drive them.</strong> We don’t just react to trends; <strong>we anticipate them.</strong> Whether you need a cutting-edge social media strategy, dynamic content creation, or full-service management, we’ve got you covered. We’re agile, strategic, and laser-focused on building brands that thrive in the ever-evolving digital world.
+                    </p>
                     <br>
-                    <p>Ready to transform your brand into a social sensation? After all, who doesn&apos;t want to be the talk of the feed?</p>
+                    <p id="paragraph4">We don’t just know what works — we know what’s next, and we’re already ahead of the curve. And, with a network of trusted partners, we take your marketing efforts one step further, ensuring your brand doesn’t just survive the digital landscape; <strong>it leads it.</strong>
+                    </p>
+                </div>
+                
+            </div>
+
+            
+
+                
+
+                <div class="black-bg service-section" style="padding: 75px 50px">
+                    
+                        <h1>What we offer</h1>
+                        <br>
+                        <br>
+                    
+                    <h2>STRATEGY</h2>
+                    <h2>[CONTENT] PLANNING</h2>
+                    <h2>[CONTENT] CREATION</h2>
+                    <h2>UGC</h2>
+                    <h2>INFLUENCER</h2>
+                </div>
+                <div style="width: 100vw; height: 50px;" class="flex-center-center">
+                    <marquee-component></marquee-component>
+                </div>
+                <div style="width: 100vw; padding: 75px 50px">
+                    <div class="ugc-video ugc-left" style="background-image:url('assets/ugc/ugc1.gif')"></div>
+                    <div class="ugc-video ugc-right" style="background-image:url('assets/ugc/ugc2.gif')"></div>
+                    <div class="ugc-video ugc-left" style="background-image:url('assets/ugc/ugc3.gif')"></div>
                 </div>
             </div>
-            <div class="danielle-hero ">
+            
+            <!-- <div class="danielle-hero ">
                 <div class="basic-padding danielle-hero-text ">
                     <h2 class="black-text">Meet the founder.</h2>
                     <br>
                     <h3 class="no-text-spacing">Dani Kravette, Founder + CEO</h3>
                     <p style="max-width: 350px"><i>A versatile creative strategist with a strong foundation in social media strategy</i></p>
                 </div>
-            </div>
+            </div> -->
+                
+            
+            
+            
             
             
             <!-- Add your main content here -->
-        </section>
+        
+        
         <footer-component></footer-component>    
     </main>
     
 </body>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const timeline = gsap.timeline();
+  
+      timeline
+        
+        
+        .from("#paragraph1", { opacity: 0, y: 20, duration: 1 })
+        .from("#paragraph2", { opacity: 0, y: 20, duration: 1 }, "+=0.25")
+        .from("#paragraph3", { opacity: 0, y: 20, duration: 1 }, "+=0.25")
+        .from("#paragraph4", { opacity: 0, y: 20, duration: 1 }, "+=0.25");
+    });
+  </script>
 
 </html>
