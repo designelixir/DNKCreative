@@ -300,7 +300,106 @@ footer {min-width: 99vw; width: 100%;}
 
 
 
+.ugc-wrapper {padding: 50px; display: flex; align-items: center;}
+.ugc-wrapper:nth-child(odd) {justify-content: flex-start;}
+.ugc-wrapper:nth-child(even) {justify-content: flex-end;}
+.ugc-video {width: 60%; min-width: 400px;  background-position: center; background-size: cover; background-repeat: no-repeat;}
 
-.ugc-video {height: 400px; width: 60vw; margin: 50px 0; background-position: center; background-size: cover; background-repeat: no-repeat;}
-.ugc-left {float: left;}
-.ugc-right {float: right;}
+
+/* Marquee */
+.marquee {overflow: hidden; width: 100vw; min-width: 50vw; background-color: white; padding: 25px 0; height: 75px;}
+
+
+.marquee-track {
+  position: absolute;
+  white-space: nowrap;
+  will-change: transform;
+  animation: marquee 30s linear infinite;
+}
+.marquee-content {display: flex; align-items: flex-start; justify-content: flex-start; }
+
+.marquee-content p {margin: 0 15px; font-size: 18px;}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-1500px); }
+}
+
+.silver {
+  
+  
+  background:
+    -moz-linear-gradient(
+    -72deg,
+    #dedede,
+    #ffffff 16%,
+    #dedede 21%,
+    #ffffff 24%,
+    
+    #dedede 36%,
+    #ffffff 45%,
+    #ffffff 60%,
+    #dedede 72%,
+    #ffffff 80%,
+    #dedede 84%,
+    #a1a1a1
+  );
+  background:
+  -webkit-linear-gradient(
+    -72deg,
+    #dedede,
+    #ffffff 16%,
+    #dedede 21%,
+    #ffffff 24%,
+    
+    #dedede 36%,
+    #ffffff 45%,
+    #ffffff 60%,
+    #dedede 72%,
+    #ffffff 80%,
+    #dedede 84%,
+    #a1a1a1
+  );
+  background:
+  -o-linear-gradient(
+    -72deg,
+    #dedede,
+    #ffffff 16%,
+    #dedede 21%,
+    #ffffff 24%,
+    
+    #dedede 36%,
+    #ffffff 45%,
+    #ffffff 60%,
+    #dedede 72%,
+    #ffffff 80%,
+    #dedede 84%,
+    #a1a1a1
+  );
+  background:
+  linear-gradient(
+    -72deg,
+    #dedede,
+    #ffffff 16%,
+    #dedede 21%,
+    #ffffff 24%,
+    
+    #dedede 36%,
+    #ffffff 45%,
+    #ffffff 60%,
+    #dedede 72%,
+    #ffffff 80%,
+    #dedede 84%,
+    #a1a1a1
+  );
+}
+
+/* Hide vertical scrollbar but allow scrolling */
+.div-scrollbar-hidden {
+    overflow-y: scroll; /* Enable vertical scrolling */
+    scrollbar-width: none; /* For Firefox */
+}
+
+.div-scrollbar-hidden::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Edge */
+}

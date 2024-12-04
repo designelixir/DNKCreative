@@ -29,15 +29,20 @@
             
             <div class="basic-padding">
                 <!-- <h1><i style="font-weight: 200;" id="header1">You're here, so you might be wondering:</i><span id="header2"> What is DNK CREATIVE all about?</span></h1> -->
-                 <h1>Strategizing, developing, and producing scroll-stopping content</h1>
+                 <h1 >
+                    <span id="filler-text1"></span>
+                    <i><span id="filler-text2"></span></i>
+                    
+                 </h1>
                 <div class="half-div basic-padding-top-bottom">
-                    <p id="paragraph1">Social platforms have become more sophisticated, algorithms more complex, and audience expectations higher than ever. Today’s audiences demand authenticity, relevance, and personalization. Standing out isn’t about following trends — it’s about setting them.</p>
+                    <p id="paragraph1">Social platforms have become more sophisticated, algorithms more complex, and audience expectations higher than ever. Today&apos;s audiences demand authenticity, relevance, and personalization. Standing out isn&apos;t about following trends — it&apos;s about setting them.</p>
                     <br>
-                    <p id="paragraph2">Social media isn’t just a place to post content; it’s a fast-paced, interactive arena where brands must continuously shape their identity, engage, and evolve in real time across not one, not two, but multiple platforms — and often all at once.</p>
-                    <p id="paragraph3">At DNK Creative, we don’t just keep up with these changes —<strong> we drive them.</strong> We don’t just react to trends; <strong>we anticipate them.</strong> Whether you need a cutting-edge social media strategy, dynamic content creation, or full-service management, we’ve got you covered. We’re agile, strategic, and laser-focused on building brands that thrive in the ever-evolving digital world.
+                    <p id="paragraph2">Social media isn&apos;t just a place to post content; it&apos;s a fast-paced, interactive arena where brands must continuously shape their identity, engage, and evolve in real time across not one, not two, but multiple platforms — and often all at once.</p>
+                    <br>
+                    <p id="paragraph3">At DNK Creative, we don&apos;t just keep up with these changes —<strong> we drive them.</strong> We don&apos;t just react to trends; <strong>we anticipate them.</strong> Whether you need a cutting-edge social media strategy, dynamic content creation, or full-service management, we&apos;ve got you covered. We&apos;re agile, strategic, and laser-focused on building brands that thrive in the ever-evolving digital world.
                     </p>
                     <br>
-                    <p id="paragraph4">We don’t just know what works — we know what’s next, and we’re already ahead of the curve. And, with a network of trusted partners, we take your marketing efforts one step further, ensuring your brand doesn’t just survive the digital landscape; <strong>it leads it.</strong>
+                    <p id="paragraph4">We don&apos;t just know what works — we know what&apos;s next, and we&apos;re already ahead of the curve. And, with a network of trusted partners, we take your marketing efforts one step further, ensuring your brand doesn&apos;t just survive the digital landscape; <strong>it leads it.</strong>
                     </p>
                 </div>
                 
@@ -59,14 +64,59 @@
                     <h2>UGC</h2>
                     <h2>INFLUENCER</h2>
                 </div>
-                <div style="width: 100vw; height: 50px;" class="flex-center-center">
-                    <marquee-component></marquee-component>
+                
+                <marquee-component></marquee-component>
+                <div class="flex-center-start" style="max-height: 100vh; width: 100vw;" id="ugcContainer">
+                    <div class="flex-center-center" style=" width: 100px; height: 300px;">
+                        <h3 class="centered-text" style=" transform: rotate(-90deg); min-width: 300px;">What We've Done</h3>
+                    </div>
+                    
+                    <div class="div-scrollbar-hidden" id="ugcContent" style="width: 100%; max-height: 100vh; overflow-y: scroll;">
+                        <div class="ugc-wrapper">
+                            <img src='assets/ugc/ugc1.gif' class="ugc-video"/>
+                        </div>
+                        <div class="ugc-wrapper">
+                            <img src='assets/ugc/ugc2.gif' class="ugc-video"/>
+                        </div>
+                        <div class="ugc-wrapper">
+                            <img src='assets/ugc/ugc3.gif' class="ugc-video"/>
+                        </div>
+                        <div class="ugc-wrapper">
+                            <img src='assets/ugc/ugc4.webp' class="ugc-video"/>
+                        </div>
+                        <div class="ugc-wrapper">
+                            <img src='assets/ugc/ugc5.webp' class="ugc-video"/>
+                        </div>
+                        <div class="ugc-wrapper">
+                            <img src='assets/ugc/ugc6.webp' class="ugc-video"/>
+                        </div>
+                        <div class="ugc-wrapper">
+                            <img src='assets/ugc/ugc11.webp' class="ugc-video"/>
+                        </div>
+                        <div class="ugc-wrapper">
+                            <img src='assets/ugc/ugc7.webp' class="ugc-video"/>
+                        </div>
+                        <div class="ugc-wrapper">
+                            <img src='assets/ugc/ugc8.webp' class="ugc-video"/>
+                        </div>
+                        <div class="ugc-wrapper">
+                            <img src='assets/ugc/ugc9.webp' class="ugc-video"/>
+                        </div>
+                        <div class="ugc-wrapper">
+                            <img src='assets/ugc/ugc10.webp' class="ugc-video"/>
+                        </div>
+                        
+                        
+                        <div class="flex-center-center basic-padding">
+                            <a href="/clients"><button class="silver" style="border: unset;">see more</button></a>
+                        </div>
+                    </div>
+
                 </div>
-                <div style="width: 100vw; padding: 75px 50px">
-                    <div class="ugc-video ugc-left" style="background-image:url('assets/ugc/ugc1.gif')"></div>
-                    <div class="ugc-video ugc-right" style="background-image:url('assets/ugc/ugc2.gif')"></div>
-                    <div class="ugc-video ugc-left" style="background-image:url('assets/ugc/ugc3.gif')"></div>
-                </div>
+                
+            
+            
+                
             </div>
             
             <!-- <div class="danielle-hero ">
@@ -77,14 +127,6 @@
                     <p style="max-width: 350px"><i>A versatile creative strategist with a strong foundation in social media strategy</i></p>
                 </div>
             </div> -->
-                
-            
-            
-            
-            
-            
-            <!-- Add your main content here -->
-        
         
         <footer-component></footer-component>    
     </main>
@@ -92,16 +134,107 @@
 </body>
 <script>
     document.addEventListener("DOMContentLoaded", () => {
-      const timeline = gsap.timeline();
-  
-      timeline
-        
-        
-        .from("#paragraph1", { opacity: 0, y: 20, duration: 1 })
-        .from("#paragraph2", { opacity: 0, y: 20, duration: 1 }, "+=0.25")
-        .from("#paragraph3", { opacity: 0, y: 20, duration: 1 }, "+=0.25")
-        .from("#paragraph4", { opacity: 0, y: 20, duration: 1 }, "+=0.25");
+        const timeline = gsap.timeline();
+
+        timeline
+            .from("#paragraph1", { opacity: 0, y: 20, duration: 1 }, "3.5")
+            .from("#paragraph2", { opacity: 0, y: 20, duration: 1 }, "+=0.25")
+            .from("#paragraph3", { opacity: 0, y: 20, duration: 1 }, "+=0.25")
+            .from("#paragraph4", { opacity: 0, y: 20, duration: 1 }, "+=0.25");
     });
-  </script>
+
+    const fillerText = [
+        'Strategizing, developing, and producing',
+        'scroll-stopping content'
+    ];
+
+    function typeText(text, elementId) {
+        return new Promise((resolve) => {
+            let index = 0;
+            const fillerElement = document.getElementById(elementId);
+            const interval = setInterval(() => {
+                fillerElement.textContent += text[index];
+                index++;
+                if (index === text.length) {
+                    clearInterval(interval);
+                    setTimeout(resolve, 0); // Wait 1 second after typing
+                }
+            }, 50); // Adjust typing speed (in milliseconds)
+        });
+    }
+
+    async function startTypingAnimation() {
+        await typeText(fillerText[0], 'filler-text1');
+        await typeText(fillerText[1], 'filler-text2');
+    }
+
+    startTypingAnimation();
+
+    document.addEventListener("DOMContentLoaded", () => {
+    const ugcContainer = document.querySelector("#ugcContainer");
+    const scrollableContent = document.querySelector('#ugcContent') // The second child div
+
+    // Enable scrolling within the second child div
+    ScrollTrigger.create({
+        trigger: ugcContainer,
+        start: "top top", // When #ugcContainer hits the top of the viewport
+        end: () => {
+        const lastChild = scrollableContent.lastElementChild;
+        return `bottom ${lastChild.getBoundingClientRect().bottom - window.innerHeight}px`; // End when the last child is in view
+    },
+        pin: true, // Pin the #ugcContainer in place
+        scrub: true, // Smooth transition while scrolling
+        onEnter: () => {
+            // Allow scrolling within the second child div
+            scrollableContent.style.overflowY = "scroll";
+        },
+        onLeaveBack: () => {
+            // Reset scrolling state when scrolling back up
+            scrollableContent.style.overflowY = "hidden";
+            scrollableContent.scrollTo(0, 0); // Reset scroll position
+        },
+    });
+
+    // Disable scrolling on #ugcContainer after reaching the bottom
+    ScrollTrigger.create({
+        trigger: ugcContainer,
+        start: "top top",
+        end: () => `+=${scrollableContent.scrollHeight}`, // Same duration as above
+        onUpdate: (self) => {
+            if (self.progress === 1) {
+                // Disable scrolling when at the bottom
+                scrollableContent.style.overflowY = "hidden";
+            }
+        },
+    });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const scroller = document.querySelector("#ugcContent");
+
+    // Set up animations for each .ugc-wrapper
+    gsap.utils.toArray(".ugc-wrapper").forEach((element) => {
+        gsap.from(element, {
+            opacity: 0,
+            y: 50,
+            duration: 0.8,
+            scrollTrigger: {
+                trigger: element,
+                scroller: scroller, // Specify the scroll container
+                start: "top 80%", // Start animation when element enters the viewport
+                end: "bottom 20%", // End animation when element exits the viewport
+                toggleActions: "play none none none", // Play animation only once
+                markers: false, // Set to true for debugging
+            },
+        });
+    });
+
+    // Refresh ScrollTrigger to ensure proper calculations
+    ScrollTrigger.refresh();
+});
+
+
+    
+</script>
 
 </html>
