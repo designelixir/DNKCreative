@@ -26,10 +26,8 @@
 </script>
 
 <body class="flex-center-center flex-column white-bg">
-    <header-component data-nav="Clients" data-style="black" id="navigation"></header-component>
-
-    
     <main>
+    <header-component data-nav="Clients" data-style="black" id="navigation"></header-component>
         <!-- Popup container with overlay background effect -->
         <div id="popup" class="popup hidden flex-center-center">
             <div class="client-details flex-center-center no-flex-grow">
@@ -38,7 +36,6 @@
         </div>
         
         <section>
-            
             <div class="clients-container basic-padding">
                 <div class="clients-list flex-center-start flex-wrap" id="clients-list">
                     <!-- Client cards will be generated here -->
@@ -46,7 +43,7 @@
             </div>
         </section>
         <section class="basic-padding">
-            <h1 >Testimonials</h1>
+            <h1>Testimonials</h1>
             <div class="testimonials-container flex-start-start">
                 <div class="testimonial" style="opacity: 1">
                     <p><i>Partnering with Dani and DNK Creative has been one of the best business decisions I've made. Dani's exceptional work ethic combined with her infectious energy takes every project to new heights, making the entire process both productive and enjoyable—an incredibly rare combination. She's undoubtedly one of the rising stars in the digital marketing industry, and working with her has been nothing short of a game-changer for my business.</i></p>
@@ -71,10 +68,9 @@
         </section>
         <div style="height: 100px;"></div>
     </main>
-    
     <footer-component></footer-component>
 
-    <script>
+<script>
 
 $('.testimonial').each(function(index) {
     $(this).css('order', index + 1); // Start with first testimonial having order 1
@@ -125,90 +121,105 @@ function toggleTestimonial(forward) {
 
 
 
-        const clientsListElement = document.getElementById('clients-list');
-        let isPopupVisible = false;
+const clientsListElement = document.getElementById('clients-list');
+let isPopupVisible = false;
 
-        clientList.forEach((client, index) => {
-            const clientCard = `
-                <div id="client-${index}" class="client-card flex-center-center no-flex-grow" onclick="expandClient('client-${index}')">
-                    <div class="client-logo-container" style="background-image: url('${client.logo}')">
-                        <h2>${client.name}</h2>
-                    </div>
-                    <div class="client-logo-container-overlay box-shadow basic-padding" style="opacity: 0;">
-                        <div class="flex-start-spacebetween">
-                            <img src="${client.logo}" class="details-client-logo" alt="${client.name} Logo">
-                            <button onclick="expandClient()" style="border: unset; margin: 0; padding: 15px;">X</button>
-                        </div>
-                        <br>
-                        <p>${client.description}</p>
-                        <div class="flex-center-start tags-list flex-wrap">
-                            ${client.services.map(service => `<h6>${service}</h6>`).join('')}
-                        </div>
-                    </div>
+clientList.forEach((client, index) => {
+    const clientCard = `
+        <div id="client-${index}" class="client-card flex-center-center no-flex-grow" onclick="expandClient('client-${index}')">
+            <div class="client-logo-container" style="background-image: url('${client.logo}')">
+                <h2>${client.name}</h2>
+            </div>
+            <div class="client-logo-container-overlay box-shadow basic-padding" style="opacity: 0;">
+                <div class="flex-start-spacebetween">
+                    <img src="${client.logo}" class="details-client-logo" alt="${client.name} Logo">
+                    <button onclick="expandClient()" style="border: unset; margin: 0; padding: 15px;">X</button>
                 </div>
-            `;
-            clientsListElement.innerHTML += clientCard;
+                <br>
+                <p>${client.description}</p>
+                <div class="flex-center-start tags-list flex-wrap">
+                    ${client.services.map(service => `<h6>${service}</h6>`).join('')}
+                </div>
+            </div>
+        </div>
+    `;
+    clientsListElement.innerHTML += clientCard;
+});
+
+function expandClient(clientId) {
+    const popup = document.getElementById('popup');
+    const popupContent = document.getElementById('popup-content');
+
+    if (!isPopupVisible) {
+        // Show popup with selected client content
+        const clientCard = document.getElementById(clientId);
+        const overlayContent = clientCard.querySelector('.client-logo-container-overlay');
+        popupContent.innerHTML = overlayContent.innerHTML;
+
+        // Display popup container
+        popup.style.display = 'flex';
+
+        // Create a timeline for opening animations
+        const openTimeline = gsap.timeline();
+
+        // Animate the popup container expansion (scale without changing background)
+        openTimeline.fromTo(
+            popup,
+            { scale: 0, backgroundColor: 'rgba(0, 0, 0, 0)' },
+            { scale: 1, duration: 0.2, ease: 'power2.out', backgroundColor: 'rgba(0, 0, 0, 0)' }
+        );
+
+        // Animate popup-content expansion
+        openTimeline.fromTo(
+            popupContent,
+            { scale: 0, opacity: 0 },
+            { scale: 1, opacity: 1, duration: 0.15, ease: 'power2.out' },
+            
+        );
+
+        // Fade in background color after the popup is fully expanded
+        openTimeline.to(
+            popup,
+            { backgroundColor: 'rgba(0, 0, 0, 0.5)', backdropFilter: 'blur(5px)', duration: 0.3, ease: 'power2.inOut' }
+        );
+    } else {
+        // Create a timeline for closing animations
+        const closeTimeline = gsap.timeline();
+
+        // Fade out the background color before starting the close animation
+        closeTimeline.to(popup, {
+            backdropFilter: 'blur(0px)',
+            backgroundColor: 'rgba(0, 0, 0, 0)',
+            duration: 0.3,
+            ease: 'power2.inOut'
         });
 
-        function expandClient(clientId) {
-            const popup = document.getElementById('popup');
-            const popupContent = document.getElementById('popup-content');
-
-            if (!isPopupVisible) {
-                // Show popup with selected client content
-                const clientCard = document.getElementById(clientId);
-                const overlayContent = clientCard.querySelector('.client-logo-container-overlay');
-                popupContent.innerHTML = overlayContent.innerHTML;
-                
-                // Display popup container
-                popup.style.display = 'flex';
-
-                // Animate the popup container expansion (fully transparent)
-                gsap.fromTo(
-                    popup, 
-                    { scale: 0.8, backgroundColor: 'rgba(0, 0, 0, 0)' }, 
-                    { scale: 1, duration: 0.2, ease: 'power1.out' }
-                );
-
-                // Animate popup-content expansion and fade in of popup background simultaneously
-                gsap.fromTo(
-                    popupContent, 
-                    { scale: 0.5, opacity: 0 }, 
-                    { scale: 1, opacity: 1, duration: 0.5, ease: 'power2.out', delay: 0.2 }
-                );
-                gsap.to(
-                    popup, 
-                    { backgroundColor: 'rgba(0, 0, 0, 0.5)', duration: 0.5, ease: 'power2.out', delay: 0.2 }
-                );
-            } else {
-                // Animate closing the popup background, popup container, and content
-                gsap.to(popupContent, {
-                    scale: 0.5,
-                    opacity: 0,
-                    duration: 0.5,
-                    ease: 'power2.in'
-                });
-                gsap.to(popup, {
-                    backgroundColor: 'rgba(0, 0, 0, 0)',
-                    duration: 0.5,
-                    ease: 'power2.in',
-                    delay: 0.2
-                });
-                gsap.to(popup, {
-                    scale: 0.8,
-                    duration: 0.2,
-                    ease: 'power1.in',
-                    delay: 0.4,
-                    onComplete: () => {
-                        popup.style.display = 'none';
-                        popupContent.innerHTML = ''; // Clear content
-                    }
-                });
-            }
+        // Animate closing popup content
+        closeTimeline.to(
+            popupContent,
+            { scale: 0.5, opacity: 0, duration: 0.5, ease: 'power2.in' },
             
-            // Toggle the popup state
-            isPopupVisible = !isPopupVisible;
-        }
+        );
+
+        // Shrink the popup container and hide it
+        closeTimeline.to(
+            popup,
+            {
+                scale: 0.8,
+                duration: 0.2,
+                ease: 'power2.in',
+                onComplete: () => {
+                    popup.style.display = 'none';
+                    popupContent.innerHTML = ''; // Clear content
+                },
+            }
+        );
+    }
+
+    // Toggle the popup state
+    isPopupVisible = !isPopupVisible;
+}
+
     </script>
 </body>
 

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,17 +12,13 @@
     <link rel="preload" href="assets/fonts/SFProDisplay-BlackItalic.woff2" as="font" type="font/woff2" crossorigin>
     <script src="scripts/index.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/player.style/sutro/+esm"></script> 
-    
 </head>
 
 
-<body>
-    
-
-    <main class="black-bg">
+<body class="black-bg">
+    <main >
         <header-component data-nav="Home" data-style="black" class="homepage-nav" id="navigation"></navigation-header>
-        <div class="homepage-container" style=" height: calc(100vh - 204px); ">
+        <div class="homepage-container" >
             
             <div class="flex-center-center flex-column big-logo-container">
                 <div class="big-logo flex-center-start no-flex-grow basic-padding">
@@ -44,11 +39,11 @@
                     </div>
                 </div>
                 <div class="flex-start-start fade-in-after reading-text">
-                    <h1>Curating compelling content that <strong><br><span id="filler-text"></span></strong></h1>
+                    <h1>Curating compelling content that <strong><br><span id="filler-text"></span></strong><span style="opacity: 0;">.</span></h1>
                     
                 </div>
                 <div style="padding: 0 25px" class="fade-in-after flex-center-center">
-                    <button id="learnMore" class="hover" onclick="window.open('/DNKCreative/about', 'self')">learn more</button>
+                    <button id="learnMore" class="hover silver" onclick="window.open('/DNKCreative/about', 'self')">learn more</button>
                 </div>
             </div>
             
@@ -136,17 +131,6 @@
     }
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-    const marqueeContent = document.querySelector('.marquee-content');
-    const speed = 20; // Adjust this value for faster or slower scrolling
-
-    gsap.to(marqueeContent, {
-        xPercent: -50, // Move the content left by 50% of its width
-        ease: "linear",
-        repeat: -1, // Infinite loop
-        duration: speed, // Adjust duration for speed
-    });
-});
 
     
     </script>
